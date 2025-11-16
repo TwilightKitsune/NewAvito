@@ -1,0 +1,54 @@
+version: '2'
+services:
+    postgres:
+      image: postgres:14.8-alpine3.18
+      environment:
+        POSTGRES_DB: "postgres"
+        POSTGRES_USER: "root"
+        POSTGRES_PASSWORD: "root"
+        PGDATA: "/var/lib/postgresql/data/pgdata"
+      volumes:
+        - ../2. Init Database:/docker-entrypoint-initdb.d
+        - habrdb-data:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+      networks:
+        network:
+          ipv4_address: 10.5.0.3
+
+    pgadmin:
+      image: dpage/pgadmin4
+      depends_on:
+        - postgres
+      ports:
+        - "5555:80"
+      environment:
+        PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+        PGADMIN_DEFAULT_PASSWORD: admin
+      restart: unless-stopped
+      networks:
+        network:
+          ipv4_address: 10.5.0.4
+
+    new-avito-server:
+      container_name: new-avito
+      build:
+        dockerfile: Dockerfile
+      ports:
+        - 8080:8080
+      depends_on:
+        - postgres
+      networks:
+        network:
+          ipv4_address: 10.5.0.2
+
+volumes:
+  habrdb-data:
+
+networks:
+  network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1

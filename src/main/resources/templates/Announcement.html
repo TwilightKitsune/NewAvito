@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Объявление</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleProfile.css" th:href="@{/style/styleProfile.css}" rel="stylesheet" />
+    <link href="../static/style/styleLogin.css" th:href="@{/style/styleLogin.css}" rel="stylesheet" />
+    <link href="../static/style/styleAnnouncement.css" th:href="@{/style/styleAnnouncement.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divForm" id="divForm" style="display: none;">
+    <form id="form" method="post" name="form" style="display: none;">
+        <label class="label" for="Сomplaint">Жалоба:</label><br>
+        <textarea class="textarea" id="Сomplaint" name="text"></textarea><br>
+        <button class="buttonAnnoun" type="button" onclick="complaint()">Назад</button>
+        <button class="buttonAnnoun" type="submit">Отправить</button>
+    </form>
+</div>
+<div th:each="el : ${announcement}" class="divMain">
+    <h2 th:text="${el.title}"/>
+    <p th:text="${el.price} + ' руб'"/>
+    <h3>Характеристики</h3>
+    <p th:text="${el.characteristics}"/>
+    <h3>Описание</h3>
+    <p th:text="${el.description}"/>
+    <br>
+    <p th:text="${el.name}"/>
+    <p th:text="'Адрес: ' + ${el.address}"/>
+    <p th:text="'Телефон: ' + ${el.telephone}"/>
+    <dif th:if="${other_contactsNullFalse}">
+        <p th:text="'Другие контакты: ' + ${el.otherContacts}"/>
+    </dif>
+    <br>
+    <p th:text="'Теги: ' + ${el.tags}"/>
+    <br>
+    <p th:text="${el.getDat()}"/>
+    <br><br>
+    <div th:if="${!thisUsersRecord}">
+        <botton class="buttonAnnoun" type="submit" onclick="complaint()">Пожаловаться</botton>
+    </div><br>
+    <div th:if="${isAdmin}">
+        <a href="/AnnouncementAdmin" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">К объявлениям для админа</a><br>
+        <div th:if="${el.getVerifiedByAdmin() == null || !el.getVerifiedByAdmin()}">
+            <a th:href="${el.id} + '/Post/'" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Разместить</a>
+        </div><br>
+        <div th:if="${el.presenceOfComplaints != null && el.presenceOfComplaints}">
+            <a th:href="${el.id} + '/Clear/'" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Очистить от жалоб</a>
+        </div><br>
+        <a th:href="'/DeleteAnnouncementAdmin/' + ${el.id}" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Удалить</a>
+        <br><br>
+        <div th:each="el : ${complaints}" style="border-radius: 15px; padding: 20px; border: 1px solid #e1e7ef;">
+            <p th:text="'id Пользователя отправившего жалобу: ' + ${el.idUser}"/>
+            <p th:text="${el.text}"/>
+            <p th:text="'Дата: ' + ${el.date}"/>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+</body>
+</html>

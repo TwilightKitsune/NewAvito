@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Войти в аккаунт</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleLogin.css" th:href="@{/style/styleLogin.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <h2>Войти в аккаунт</h2>
+    <p th:text="${wrong}" class="wrong"/>
+    <form class="form" action="Login" method="post">
+        <label class="label" for="Login">Логин:</label>
+        <input class="text" type="text" id="Login" name="login" placeholder="Введите логин" required>
+        <label class="label" for="Password">Пароль:</label>
+        <div>
+            <input class="text" type="password" id="Password" name="password" placeholder="Введите пароль" required>
+            <button class="button" type="button" onclick="passwordBut()" style="width: 123px;">Показать пароль</button>
+        </div>
+        <br>
+        <button class="button" type="submit">Войти</button>
+    </form>
+    <a th:href="Registration" style="border: 0;
+                            border-style: solid;
+                            text-decoration: none;
+                            color: white;
+                            font-size: 17px;
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            background-color: #133d60;">Зарегистрироваться</a>
+</div>
+<script type="text/javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+</body>
+</html>

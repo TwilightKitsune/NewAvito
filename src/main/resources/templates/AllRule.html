@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Все правила</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleAllAdmins.css" th:href="@{/style/styleAllAdmins.css}" rel="stylesheet" />
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleRule.css" th:href="@{/style/styleRule.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <a href="/Admin" style="border: 0;
+            border-style: solid;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #133d60;">Профиль админа</a><br><br>
+    <form method="post">
+        <input id="search" type="text" name="search" placeholder="Поиск">
+        <button id="searchButton" type="submit">Найти</button>
+    </form><br>
+    <div th:each="el : ${rules}" class="divRule">
+        <p th:text="'id: ' + ${el.id}"/>
+        <p th:text="${el.text}"/>
+        <p th:text="'Тип : ' + ${el.type}"/>
+        <p th:text="'Id добавившего админа: ' + ${el.idAdmin}"/>
+        <p th:text="'Дата создания: ' + ${el.date}"/>
+        <a th:href="'/EditRule/' + ${el.id}" style="border: 0;
+            border-style: solid;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #133d60;">Редактировать</a>
+        <a th:href="'/DeleteRule/' + ${el.id}" style="border: 0;
+            border-style: solid;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #133d60;">Удалить</a>
+    </div>
+</div>
+</body>
+</html>

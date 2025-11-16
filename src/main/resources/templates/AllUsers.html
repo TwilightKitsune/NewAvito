@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Все пользователи</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleAllUsers.css" th:href="@{/style/styleAllUsers.css}" rel="stylesheet" />
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <a href="/Admin" style="border: 0;
+            border-style: solid;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #133d60;">Профиль админа</a><br><br>
+    <div th:each="el : ${users}" class="divUser">
+        <p th:text="'id: ' + ${el.id}"/>
+        <p th:text="'Login: ' + ${el.login}"/>
+        <p th:text="'Фамилия: ' + ${el.surname}"/>
+        <p th:text="'Имя: ' + ${el.Name}"/>
+        <div th:if="${el.patronymic != null && el.patronymic != ''}">
+            <p th:text="'Отчество: ' + ${el.patronymic}"/>
+        </div>
+        <div th:if="${el.patronymic == null || el.patronymic == ''}">
+            <p>Отчество: -</p>
+        </div>
+        <p th:text="'Телефон: ' + ${el.phone}"/>
+        <p th:text="'Почта: ' + ${el.email}"/>
+        <p th:text="'Адрес: ' + ${el.address}"/>
+        <div th:if="${el.ban}">
+            <p style="color: red;">Аккаунт заблокирован</p>
+        </div>
+        <div th:if="${!el.ban}">
+            <p style="color: green;">Аккаунт не заблокирован</p>
+        </div>
+        <div th:if="${el.blockedEntries == null}">
+            <p>Количество заблокированных объявлений: 0</p>
+        </div>
+        <div th:if="${el.blockedEntries != null}">
+            <p th:text="'Количество заблокированных объявлений: ' + ${el.blockedEntries}"/>
+        </div>
+        <br>
+        <div th:if="${!el.ban}">
+            <a th:href="'/Block/' + ${el.id}" style="border: 0;
+            border-style: solid;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #133d60;">Заблокировать</a>
+        </div>
+        <div th:if="${el.ban}">
+            <a th:href="'/Unlock/' + ${el.id}" style="border: 0;
+            border-style: solid;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #133d60;">Разблокировать</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

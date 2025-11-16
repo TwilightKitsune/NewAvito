@@ -1,0 +1,12 @@
+<div th:fragment="delete">
+    <p th:text="${wrong}" class="wrong"/>
+    <form class="form" method="post">
+        <label class="login" for="Password">Для удаления введите пароль:</label>
+        <div>
+            <input class="text" type="password" id="Password" name="password" placeholder="Введите пароль" required>
+            <button class="button" type="button" onclick="passwordBut()" style="width: 123px;">Показать пароль</button>
+        </div>
+        <br>
+        <button class="button" type="submit">Удалить</button>
+    </form>
+</div>

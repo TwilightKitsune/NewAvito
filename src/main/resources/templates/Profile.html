@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Профиль</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleProfile.css" th:href="@{/style/styleProfile.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <div>
+        <p th:text="'ФИО: ' + ${fio}"/>
+        <p th:text="'Логин: ' + ${login}"/>
+        <p th:text="'Телефон: ' + ${phone}"/>
+        <p th:text="'Почта: ' + ${email}"/>
+        <p th:text="'Адрес: ' + ${address}"/>
+        <p th:text="'Заблокированных объявлений: ' + ${blockedEntries}"/>
+        <div th:if="${!ban}">
+            <p>Статус аккаунта: не заблокирован</p>
+        </div>
+        <div th:if="${ban}">
+            <p>Статус аккаунта: заблокирован</p>
+        </div>
+    </div>
+    <div>
+        <a href="/AnnouncementUsers" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Перейти к своим объявлениям</a>
+        <a href="/EditProfile" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Редактировать профиль</a>
+        <a href="/EditPassword" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Сменить пароль</a>
+        <a href="/DeleteProfile" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Удалить профиль</a>
+        <a href="/Exit" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Выйти</a>
+    </div>
+</div>
+</body>
+</html>

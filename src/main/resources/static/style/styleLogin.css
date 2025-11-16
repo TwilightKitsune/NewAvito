@@ -1,0 +1,40 @@
+.divMain {
+    margin-top: 121px;
+    margin-left: 38px;
+}
+
+.text {
+    border-radius: 5px;
+    border: 1.5px solid black;
+    height: 23px;
+    width: 214px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.button {
+    border-color: black;
+    border: 1.5px solid black;
+    border-style: solid;
+    background-color: #133d60;
+    color: white;
+    border-radius: 5px;
+    width: 74px;
+    height: 28px;
+}
+
+.label {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.wrong {
+    color: red;
+}

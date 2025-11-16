@@ -1,0 +1,37 @@
+
+.buttonAnnoun {
+    border: 1.5px solid;
+    background-color: #133d60;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 5px 10px;
+}
+
+.divForm {
+    position: fixed;
+    left: 604px;
+    top: 227px;
+    width: 374px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #e1e7ef;
+    height: 240px;
+    background-color: white;
+}
+
+.textarea {
+    width: 313px;
+    height: 180px;
+}
+
+@keyframes ani1 {
+    0% {height: 0px; width: 0px;}
+    100% {height: 240px; width: 374px;}
+}
+
+@keyframes ani2 {
+    0% {height: 240px; width: 374px;}
+    100% {height: 0px; width: 0px;}
+}

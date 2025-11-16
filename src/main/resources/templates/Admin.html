@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleProfile.css" th:href="@{/style/styleProfile.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <div>
+        <p th:text="'Логин: ' + ${login}"/>
+    </div>
+    <div>
+        <a href="/AnnouncementAdmin" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Перейти к объявлениям для рассмотрения</a>
+        <a href="/AddAdmin" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Добавить нового админа</a>
+        <a href="/AllAdmins" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Посмотреть всех админов</a>
+        <a href="/AllUsers" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Посмотреть всех пользователей</a>
+        <a href="/EditProfileAdmin" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Редактировать профиль</a>
+        <a href="/DeleteProfileAdmin" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Удалить профиль</a>
+        <a href="/ExitAdmin" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Выйти</a><br><br>
+        <a href="/AllRule" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Посмотреть все правила</a>
+        <a href="/AddRule" style="border: 0;
+                                                    border-style: solid;
+                                                    text-decoration: none;
+                                                    color: white;
+                                                    font-size: 17px;
+                                                    padding: 5px 10px;
+                                                    border-radius: 5px;
+                                                    background-color: #133d60;">Добавить правило</a>
+    </div>
+</div>
+</body>
+</html>

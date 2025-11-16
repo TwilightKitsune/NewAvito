@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Главная страница</title>
+    <link href="../static/style/styleHome.css" th:href="@{/style/styleHome.css}" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header id="divTop">
+    <div class="divA">
+        <div th:if="${isAdmin}">
+            <a href="/Admin" style="color: white">Профиль админа</a>
+        </div>
+        <p class="pType">Тип </p>
+        <p class="pType" th:text="${Type}"/>
+        <button class="button" onclick="getType()"><img id="img" style="height: 20px; width: auto;" src="/img/Down.png"></button>
+    </div>
+    <form action="/" method="post">
+        <input id="search" type="text" name="search" placeholder="Поиск">
+        <button id="searchButton" type="submit">Найти</button>
+    </form>
+    <div class="divA2">
+        <a href="/Profile" style="color: white;">Профиль</a>
+        <a href="/CreateAnnouncement" style="color: white;">Новое объявление</a>
+    </div>
+</header>
+<div id="divType" class="divType" style="display: none;">
+    <div id="divTypeA" class="divTypeA" style="display: none;">
+        <a href="/">Всё</a>
+        <a href="/Transport">Транспорт</a>
+        <a href="/House">Дом</a>
+        <a href="/Electronics">Электроника</a>
+        <a href="/Work">Работа</a>
+        <a href="/Hobby">Хобби</a>
+        <a href="/Things">Вещи</a>
+        <a href="/Animals">Животные</a>
+        <a href="/Services">Услуги</a>
+        <a href="/Other">Другое</a>
+    </div>
+</div>
+<div class = "divMain">
+    <div th:each="el : ${announcements}">
+       <div th:if="${el.getVerifiedByAdmin() && (el.getNumberOfComplaints() == null || el.getNumberOfComplaints() < 3)}">
+           <div class="divAnnouncements">
+               <div>
+                    <h3 th:text="${el.title}" class="textAnnouncements"/>
+                    <h4 th:text="${el.price} + ' руб'" class="textAnnouncements"/>
+                    <p th:text="${el.address}" class="textAnnouncements"/>
+                    <p th:text="${el.getDat()}" class="textAnnouncements"/>
+                    <a th:href="'/' + ${el.id}" style="border: 0;
+                                                border-style: solid;
+                                                text-decoration: none;
+                                                color: white;
+                                                font-size: 17px;
+                                                padding: 5px 10px;
+                                                border-radius: 5px;
+                                                background-color: #133d60;">Подробнее</a>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+</body>
+</html>

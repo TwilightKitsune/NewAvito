@@ -1,0 +1,17 @@
+.divMain {
+    margin-left: 38px;
+    margin-top: 121px;
+}
+
+.divAdmin{
+    background-color: #f2f5f9;
+    width: 338px;
+    height: 50px;
+    text-align: center;
+    margin-bottom: 24px;
+    border-radius: 5%;
+}
+
+p {
+    padding: 16px 0px;
+}

@@ -1,0 +1,31 @@
+header {
+    min-width: 100%;
+    min-height: 96px;
+    border-bottom: 1px solid #e1e7ef;
+    background-color: #0b253b;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+.divA {
+    margin-left: 46px;
+    display: flex;
+    min-width: 335px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    font-size: 20px;
+    text-decoration: underline;
+    color: white;
+}

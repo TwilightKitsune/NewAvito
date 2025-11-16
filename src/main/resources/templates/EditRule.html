@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавление правила</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleLogin.css" th:href="@{/style/styleLogin.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <h2>Добавление правила</h2>
+    <form method="post" class="form">
+        <label class="label" for="Text">Текст:</label>
+        <textarea class="text" type="text" id="Text" name="text" placeholder="Введите правило" style="height: 65px;" required th:value="${text}"></textarea>
+        <label class="label" for="Type">Тип:</label>
+        <select class="text" id="Type" name="type" style="height: 28px; width: 227px;" required>
+            <option value="Слова">Слова</option>
+        </select>
+        <br>
+        <button class="button" type="submit">Добавить</button>
+    </form>
+</div>
+</body>
+</html>

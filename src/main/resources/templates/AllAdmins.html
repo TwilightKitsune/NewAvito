@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Все админы</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleAllAdmins.css" th:href="@{/style/styleAllAdmins.css}" rel="stylesheet" />
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <a href="/Admin" style="border: 0;
+            border-style: solid;
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #133d60;">Профиль админа</a><br><br>
+    <div th:each="el : ${admins}" class="divAdmin">
+            <p th:text="'id: ' + ${el.id} + '     Login: ' + ${el.login}"/>
+    </div>
+</div>
+</body>
+</html>

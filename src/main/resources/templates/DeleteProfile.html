@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Удаление профиля</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleLogin.css" th:href="@{/style/styleLogin.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <h2>Удаление профиля</h2>
+    <p th:text="${wrong}" class="wrong"/>
+    <form class="form" method="post">
+        <label class="label" for="Login">Для удаления введите логин:</label>
+        <input class="text" type="password" id="Login" name="login" placeholder="Введите логин" required><br>
+        <label class="label" for="Password">Для удаления введите пароль:</label>
+        <div>
+            <input class="text" type="password" id="Password" name="password" placeholder="Введите пароль" required>
+            <button class="button" type="button" onclick="passwordBut()" style="width: 123px;">Показать пароль</button>
+        </div>
+        <br>
+        <button class="button" type="submit">Удалить</button>
+    </form>
+</div>
+<script type="text/javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+</body>
+</html>

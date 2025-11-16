@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Новое объявление</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleLogin.css" th:href="@{/style/styleLogin.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <h2>Новое объявление</h2>
+    <form class="form" action="CreateAnnouncement" method="post" name="form">
+        <label class="label" for="Title">Название:</label>
+        <input class="text" type="text" id="Title" name="title" placeholder="Введите название" required>
+        <label class="label" for="Address">Адрес:</label>
+        <input class="text" type="text" id="Address" name="address" placeholder="Введите адрес" required>
+        <div style="margin-bottom: 5px;">
+            <label class="label" for="AddressCheck">Указать мой адрес</label>
+            <input type="checkbox" id="AddressCheck" name="addressCheck" value="on" onchange="check()">
+        </div>
+        <label class="label" for="Characteristics">Xарактеристики:</label>
+        <textarea class="text" type="text" id="Characteristics" name="characteristics" placeholder="Введите характеристики" required></textarea>
+        <label class="label" for="Description">Описание:</label>
+        <textarea class="text" id="Description" name="description" placeholder="Введите описание" required></textarea>
+        <label class="label" for="Price">Цена:</label>
+        <input class="text" type="text" id="Price" name="price" placeholder="Введите цену" pattern="^[ 0-9]+$" required>
+        <label class="label" for="Telephone">Телефон:</label>
+        <input class="text" type="text" id="Telephone" name="telephone" placeholder="Введите телефон" pattern = "([+][7]||[8])[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}"
+               onkeyup="this.value = this.value.replace(/[^/0-9]\W/g,'');" required>
+        <div style="margin-bottom: 5px;">
+            <label class="label" for="TelephoneCheck">Указать мой телефон</label>
+            <input type="checkbox" id="TelephoneCheck" name="telephoneCheck" value="on" onchange="check()">
+        </div>
+        <label class="label" for="Other_contacts">Другие контакты:</label>
+        <input class="text" type="text" id="Other_contacts" name="other_contacts" placeholder="Другие контакты">
+        <label class="label" for="Type">Категория:</label>
+        <select class="text" id="Type" name="type" style="height: 28px; width: 227px;" required>
+            <option value="Transport">Транспорт</option>
+            <option value="House">Дом</option>
+            <option value="Electronics">Электроника</option>
+            <option value="Work">Работа</option>
+            <option value="Hobby">Хобби</option>
+            <option value="Things">Вещи</option>
+            <option value="Animals">Животные</option>
+            <option value="Services">Услуги</option>
+            <option value="Other">Другое</option>
+        </select>
+        <label class="label" for="Tags">Дополнительные теги для поиска:</label>
+        <input class="text" type="text" id="Tags" name="tags" placeholder="Введите дополнительные теги">
+        <label class="label" for="Name">ФИО которое будет указано в объявлении:</label>
+        <input class="text" type="text" id="Name" name="name" placeholder="Введите ФИО" required>
+        <div style="margin-bottom: 5px;">
+            <label class="label" for="NameCheck">Указать моё имя</label>
+            <input type="checkbox" id="NameCheck" name="nameCheck" value="on" onchange="check()" >
+        </div>
+        <br>
+        <button class="button" style="width: 202px;" type="submit">Разместить объявление</button>
+    </form>
+</div>
+<script type="text/javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+</body>
+</html>

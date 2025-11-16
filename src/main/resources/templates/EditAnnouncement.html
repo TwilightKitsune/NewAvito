@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование объявления</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleLogin.css" th:href="@{/style/styleLogin.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <h2>Редактирование объявления</h2>
+    <form class="form" method="post">
+        <label class="label" for="Title">Название:</label>
+        <input class="text" type="text" id="Title" name="title" placeholder="Введите название" required th:value="${announcement.getTitle()}">
+        <label class="label" for="Address">Адрес:</label>
+        <input class="text" type="text" id="Address" name="address" placeholder="Введите адрес" required th:value="${announcement.getAddress()}">
+        <label class="label" for="Characteristics">Xарактеристики:</label>
+        <textarea class="text" type="text" id="Characteristics" name="characteristics" placeholder="Введите характеристики" required th:text="${announcement.getCharacteristics()}"/>
+        <label class="label" for="Description">Описание:</label>
+        <textarea class="text" id="Description" name="description" placeholder="Введите описание" required th:text="${announcement.getDescription()}"/>
+        <label class="label" for="Price">Цена:</label>
+        <input class="text" type="text" id="Price" name="price" placeholder="Введите цену" pattern="^[ 0-9]+$" required th:value="${announcement.getPrice()}">
+        <label class="label"for="Telephone">Телефон:</label>
+        <input class="text" type="text" id="Telephone" name="telephone" placeholder="Введите телефон" pattern = "([+][7]||[8])[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" onkeyup="this.value = this.value.replace(/[^/0-9]\W/g,'');" required th:value="${announcement.getTelephone()}">
+        <label class="label" for="OtherContacts">Другие контакты:</label>
+        <input class="text" type="text" id="OtherContacts" name="otherContacts" placeholder="Другие контакты" th:value="${announcement.getOtherContacts()}">
+        <label class="label" for="Type">Категория:</label>
+        <select class="text" id="Type" name="type" required style="height: 28px; width: 227px;" th:value="${el.type}">
+            <option value="Transport">Транспорт</option>
+            <option value="House">Дом</option>
+            <option value="Electronics">Электроника</option>
+            <option value="Work">Работа</option>
+            <option value="Hobby">Хобби</option>
+            <option value="Things">Вещи</option>
+            <option value="Animals">Животные</option>
+            <option value="Services">Услуги</option>
+            <option value="Services">Другое</option>
+        </select>
+        <label class="label" for="Tags">Дополнительные теги для поиска:</label>
+        <input class="text" type="text" id="Tags" name="tags" placeholder="Введите дополнительные теги" th:value="${announcement.getTags()}" >
+        <label class="label" for="Name">ФИО которое будет указано в объявлении:</label>
+        <input class="text" type="text" id="Name" name="name" placeholder="Введите ФИО" th:value="${announcement.getName()}" required>
+        <br>
+        <button class="button" type="submit" style="width: 86px;">Сохранить</button>
+    </form>
+</div>
+</body>
+</html>

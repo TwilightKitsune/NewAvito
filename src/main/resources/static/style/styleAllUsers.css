@@ -1,0 +1,13 @@
+.divMain {
+    margin-left: 38px;
+    margin-top: 121px;
+}
+
+.divUser{
+    background-color: #f2f5f9;
+    width: 338px;
+    height: 404px;
+    padding: 10px;
+    border-radius: 5%;
+    margin-bottom: 24px;
+}

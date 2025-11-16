@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.divMain {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 121px;
+}
+
+.divAnnouncements {
+    background-color: #f2f5f9;
+    width: 338px;
+    height: 250px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5%;
+    margin-bottom: 24px;
+}
+
+.textAnnouncements {
+    margin-top: 0;
+}
+
+#divTop {
+    min-width: 100%;
+    min-height: 96px;
+    border-bottom: 1px solid #e1e7ef;
+    background-color: #0b253b;
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+#searchButton {
+    border-color: black;
+    border: 1.5px solid black;
+    border-style: solid;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    width: 74px;
+    height: 28px;
+}
+
+#search {
+    border-radius: 5px;
+    border: 1.5px solid black;
+    height: 23px;
+    width: 444px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.divA {
+    display: flex;
+    min-width: 570px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divA2 {
+    display: flex;
+    min-width: 250px;
+    justify-content: space-between;
+}
+
+.button {
+    border-color: black;
+    border: 1.5px solid black;
+    border-style: solid;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 5px;
+    width: 71px;
+    padding: 8px;
+    height: 36px;
+}
+
+.divTypeA {
+    display: flex;
+    width: 378px;
+    height: 85px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: space-around;
+    justify-content: space-evenly;
+}
+
+.divType {
+    left: 540px;
+    top: 78px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    position: fixed;
+    border: 1px solid #e1e7ef;
+    animation: 0.5s linear 0s 1 normal both running ani1;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.pType {
+    font-size: 20px;
+    color: white;
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    font-size: 20px;
+    text-decoration: underline;
+    color: black;
+}
+
+@keyframes ani1 {
+    0% {height: 0px; width: 0px;}
+    100% {height: 95px; width: 384px;}
+}
+
+@keyframes ani2 {
+    0% {height: 95px; width: 384px;}
+    100% {height: 0px; width: 0px;}
+}

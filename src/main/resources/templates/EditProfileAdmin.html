@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование профиля</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/style/styleHeader.css" th:href="@{/style/styleHeader.css}" rel="stylesheet" />
+    <link href="../static/style/styleLogin.css" th:href="@{/style/styleLogin.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="divMain">
+    <h2>Редактирование профиля(админ)</h2>
+    <p th:text="${wrong}" class="wrong"/>
+    <form class="form" method="post">
+        <label class="label" for="Login">Логин:</label>
+        <input class="text" th:value="${login}" type="text" id="Login" name="login" placeholder="Введите логин"  required>
+        <label class="label" for="Password1">Старый пароль:</label>
+        <div>
+            <input class="text" type="password" id="Password1" name="password1" placeholder="Введите пароль"  required>
+            <button class="button" type="button" onclick="passwordButton('Password1')" style="width: 123px;">Показать пароль</button>
+        </div>
+        <label class="label" for="Password2">Новый пароль:</label>
+        <div>
+            <input class="text" type="password" id="Password2" name="password2" placeholder="Введите новый пароль" required>
+            <button class="button" type="button" onclick="passwordButton('Password2')" style="width: 123px;">Показать пароль</button>
+        </div>
+        <label class="label" for="Password3">Повторите новый пароль:</label>
+        <div>
+            <input class="text" type="password" id="Password3" name="password3" placeholder="Повторите новый пароль" required>
+            <button class="button" type="button" onclick="passwordButton('Password3')" style="width: 123px;">Показать пароль</button>
+        </div>
+        <br>
+        <button class="button" type="submit" style="width: 86px;">Сохранить</button>
+    </form><br>
+    <a href="/Admin" style="border: 0;
+                            border-style: solid;
+                            text-decoration: none;
+                            color: white;
+                            font-size: 17px;
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            background-color: #133d60;">Назад</a>
+</div>
+<script type="text/javascript" th:src="@{/js/js.js}" src="../static/js/js.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+#searchButton {
+    border-color: black;
+    border: 1.5px solid black;
+    border-style: solid;
+    background-color: #133d60;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 5px 5px;
+}
+
+#search {
+    border-radius: 5px;
+    border: 1.5px solid black;
+    height: 23px;
+    width: 444px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.divRule {
+    background-color: #f2f5f9;
+    width: 338px;
+    height: 404px;
+    padding: 10px;
+    border-radius: 5%;
+    margin-bottom: 24px;
+}
