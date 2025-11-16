@@ -66,24 +66,24 @@ http://localhost:5555/
 
 ## Скриншоты
 ### Главная страница
-<img width="1885" height="818" alt="Главная страница" src="https://github.com/user-attachments/assets/49e68e34-51e4-48fa-8aae-32cea128db58" />
+<img width="1885" height="818" alt="Главная страница" src="https://github.com/user-attachments/assets/6f67efd5-f9f1-4577-a315-c068f5eeac2d" />
 
 
 ### Карточка объявления
-<img width="1211" height="753" alt="Карточка объявления" src="https://github.com/user-attachments/assets/44055e09-dde5-43e8-ab5d-20dd29518d26" />
+<img width="1211" height="753" alt="Карточка объявления" src="https://github.com/user-attachments/assets/4189fe3e-24e8-47ba-8cb2-5a3ce539cbc2" />
 
 
 ### Фильтрация и поиск
-<img width="1804" height="489" alt="Фильтрация и поиск" src="https://github.com/user-attachments/assets/cfaea8a0-cb43-43b6-bd7b-6a78e67655fd" />
+<img width="1804" height="489" alt="Фильтрация и поиск" src="https://github.com/user-attachments/assets/5c5c7d9e-9489-4036-993a-0ab930471789" />
 
 
 ### Админ-панель: Главная
-<img width="1605" height="498" alt="Админ-панель: Главная" src="https://github.com/user-attachments/assets/00e14bae-419c-4ac8-90f2-9a48fe36215e" />
+<img width="1605" height="498" alt="Админ-панель: Главная" src="https://github.com/user-attachments/assets/e6c9436e-fd29-4ac1-b9e7-88d001e308f3" />
+
+
+### Admin panel: Create rule
+<img width="670" height="429" alt="Admin panel: Create rule" src="https://github.com/user-attachments/assets/605e7168-82dd-49a7-a937-acbee592ff74" />
 
 
 ### Админ-панель: Создание правила
-<img width="670" height="429" alt="Админ-панель: Создание правила" src="https://github.com/user-attachments/assets/30ba6779-31bc-44df-adff-c8cc0eb6e241" />
-
-
-### Админ-панель: Управление пользователями
-<img width="963" height="901" alt="Админ-панель: Управление пользователями" src="https://github.com/user-attachments/assets/db47d889-adc0-4cbb-bf08-ececcfaaad12" />
+<img width="963" height="901" alt="Админ-панель: Создание правила" src="https://github.com/user-attachments/assets/e7ca7bc0-f2c7-43f8-a43c-fd42fbf989bf" />
